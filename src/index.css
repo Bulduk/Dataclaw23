@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-nexus-bg: var(--nexus-bg);
+  --color-nexus-accent: var(--nexus-accent);
+  --color-nexus-text: var(--nexus-text);
+  --color-nexus-glass: var(--nexus-glass);
+  --color-nexus-border: var(--nexus-border);
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+:root {
+  --nexus-bg: #f8f9fa;
+  --nexus-accent: #3b82f6; /* Soft blue */
+  --nexus-text: #1e293b;
+  --text-rgb: 30, 41, 59;
+  --nexus-glass: #ffffff;
+  --nexus-border: #e2e8f0;
+}
+
+html.dark {
+  --nexus-bg: #0f172a;
+  --nexus-accent: #3b82f6;
+  --nexus-text: #f8fafc;
+  --text-rgb: 248, 250, 252;
+  --nexus-glass: #1e293b;
+  --nexus-border: rgba(255, 255, 255, 0.05);
+}
+
+body {
+  background-color: var(--nexus-bg);
+  color: var(--nexus-text);
+  font-family: var(--font-sans);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Custom scrollbar for terminal vibe */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.05); 
+}
+html.dark ::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.2); 
+}
+::-webkit-scrollbar-thumb {
+  background: var(--nexus-border); 
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--nexus-accent); 
+}
